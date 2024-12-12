@@ -1,7 +1,10 @@
+import { useLoading } from './LoadingProvider';
 import './loading.css';
-const Loading = ({ isLoading }) => {
 
-    if (!isLoading) return null;
+const Loading = () => {
+    const { loading } = useLoading();
+
+    if (!loading) return null;
 
     return (
         <div className="center-container">

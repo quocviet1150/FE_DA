@@ -5,6 +5,7 @@ import { useLoading } from "../loading/LoadingProvider";
 const languages = [
     { code: "en", lang: "English" },
     { code: "vi", lang: "Việt Nam" },
+    { code: "jp", lang: "Japan" }
 ];
 
 const LanguageSelector = () => {

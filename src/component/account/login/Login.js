@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import '../../account/Account.css';
 import HeaderAccount from '../../header/headerAccount';
+import FooterAccount from '../../footer/footer';
 
 const Login = () => {
     const { t } = useTranslation();
@@ -99,7 +100,7 @@ const Login = () => {
                                         onChange={handleChange}
                                     />
                                     {formState.errors.emailOrUsername && (
-                                        <div className="text-danger" style={{fontSize:'12px'}}>{formState.errors.emailOrUsername}</div>
+                                        <div className="text-danger" style={{ fontSize: '12px' }}>{formState.errors.emailOrUsername}</div>
                                     )}
                                 </div>
 
@@ -119,7 +120,7 @@ const Login = () => {
                                         <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                     </span>
                                     {formState.errors.password && (
-                                        <div className="text-danger" style={{fontSize:'12px'}}>{formState.errors.password}</div>
+                                        <div className="text-danger" style={{ fontSize: '12px' }}>{formState.errors.password}</div>
                                     )}
                                 </div>
 
@@ -142,6 +143,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <FooterAccount />
         </form>
     );
 };

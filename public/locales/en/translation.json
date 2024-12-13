@@ -24,5 +24,15 @@
   "please_enter_confirmPassword": "Please confirm your password",
   "please_enter_information": "Please enter information",
   "invalid_email": "Invalid email format",
-  "password_invalid": "Invalid password"
+  "password_invalid": "Invalid password",
+  "follow_us": "FOLLOW VIETSHOP",
+  "payment": "PAYMENT",
+  "shipping_unit": "SHIPPING UNIT",
+  "all_rights_reserved": "© 2024 VietShop. All rights reserved.",
+  "privacy_policy": "PRIVACY POLICY",
+  "operation_policy": "OPERATION POLICY",
+  "shipping_policy": "SHIPPING POLICY",
+  "return_refund_policy": "RETURN & REFUND POLICY",
+  "all_rights_reserved_us": "© 2024 VietShop. All rights belong to VietNQ.",
+  "connect_us": "Connect with us."
 }

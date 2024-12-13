@@ -76,7 +76,7 @@
     align-items: center;
 }
 
-.forgot-password-data{
+.forgot-password-data {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
     padding: 2%;
     width: 500px;
@@ -85,4 +85,40 @@
 .fs-custom {
     font-size: 12px;
     margin-bottom: -4%;
-  }
+}
+
+.footer-account {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1%;
+}
+
+.footer-account-main {
+    background-color: #fbfbfb;
+}
+
+.footer-account-content {
+    width: 20%;
+    padding-top: 4%;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: #aaa;
+}

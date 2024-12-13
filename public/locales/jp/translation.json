@@ -24,5 +24,15 @@
   "please_enter_confirmPassword": "確認用パスワードを入力してください",
   "please_enter_information": "情報を入力してください",
   "invalid_email": "無効なメール形式です",
-  "password_invalid": "無効なパスワード"
+  "password_invalid": "無効なパスワード",
+  "follow_us": "VietShopをフォロー",
+  "payment": "お支払い",
+  "shipping_unit": "配送単位",
+  "all_rights_reserved": "© 2024 VietShop。全著作権所有。",
+  "privacy_policy": "プライバシーポリシー",
+  "operation_policy": "運営ポリシー",
+  "shipping_policy": "配送ポリシー",
+  "return_refund_policy": "返品＆返金ポリシー",
+  "all_rights_reserved_us": "© 2024 VietShop。全権利はVietNQに帰属します。",
+  "connect_us": "私たちとつながる"
 }

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../../account/Account.css';
 import HeaderAccount from '../../header/headerAccount';
+import FooterAccount from '../../footer/footer';
 
 const ForgotPassword = () => {
     const { t } = useTranslation();
@@ -67,6 +68,7 @@ const ForgotPassword = () => {
                     </div>
                 </div>
             </div>
+            <FooterAccount />
         </form>
     );
 };

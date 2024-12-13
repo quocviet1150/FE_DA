@@ -24,6 +24,15 @@
   "please_enter_confirmPassword": "Vui lòng xác nhận mật khẩu của bạn",
   "please_enter_information":"Vui lòng nhập thông tin",
   "invalid_email": "Định dạng email không hợp lệ",
-  "password_invalid": "Mật khẩu không hợp lệ"
-
+  "password_invalid": "Mật khẩu không hợp lệ",
+  "follow_us":"THEO DÕI VIETSHOP",
+  "payment":"THANH TOÁN",
+  "shipping_unit":"ĐƠN VỊ VẬN CHUYỂN",
+  "all_rights_reserved":"© 2024 VietShop. Tất cả các quyền được bảo lưu.",
+  "privacy_policy": "CHÍNH SÁCH BẢO MẬT",
+  "operation_policy": "QUY CHẾ HOẠT ĐỘNG",
+  "shipping_policy": "CHÍNH SÁCH VẬN CHUYỂN",
+  "return_refund_policy": "CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN",
+  "all_rights_reserved_us":"© 2024 VietShop. Tất cả các quyền thuộc về VietNQ.",
+  "connect_us":"Kết nối với chúng tôi."
 }

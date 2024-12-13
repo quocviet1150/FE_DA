@@ -1,0 +1,64 @@
+.w-60 {
+    width: 60%;
+    color: #FFFFFF;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.language-selector {
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    z-index: 10;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100px;
+}
+
+.icon-container:hover .language-selector {
+    display: block;
+}
+
+.language-selector div {
+    transition: background-color 0.2s;
+}
+
+.language-selector div:hover {
+    color: red;
+}
+
+.language-selector .selected {
+    color: #007bff;
+}
+
+.register_header {
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #007bff;
+    }
+}
+
+.login_header {
+    padding-left: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: #007bff;
+    }
+}
+
+.img-login {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}

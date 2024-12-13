@@ -1,13 +1,29 @@
 {
   "need_help": "Bạn cần giúp đỡ ?",
   "login":"Đăng nhập",
-  "email":"Email/Tên đăng nhập",
+  "email":"Email",
+  "username":"Tên đăng nhập",
   "password":"Mật khẩu",
   "forgot_password":"Quên mật khẩu",
   "unlock_account":"Mở khóa tài khoản",
   "new_to_shopee":"Bạn mới biết đến VietShop?",
   "register":"Đăng ký",
   "or":"HOẶC",
-  "reset_password":"Đặt lại mật khẩu"
+  "reset_password":"Đặt lại mật khẩu",
+  "confirm_password":"Nhập lại mật khẩu",
+  "have_login":"Đã có tài khoản?",
+  "last_name":"Họ",
+  "first_name":"Tên",
+  "password_mismatch":"Mật khẩu và xác nhận mật khẩu không khớp!",
+  "please_enter_username_or_email":"Vui lòng nhập tên đăng nhập hoặc email",
+  "please_enter_lastName": "Vui lòng nhập họ của bạn",
+  "please_enter_firstName": "Vui lòng nhập tên của bạn",
+  "please_enter_username": "Vui lòng nhập tên đăng nhập của bạn",
+  "please_enter_email": "Vui lòng nhập email của bạn",
+  "please_enter_password": "Vui lòng nhập mật khẩu của bạn",
+  "please_enter_confirmPassword": "Vui lòng xác nhận mật khẩu của bạn",
+  "please_enter_information":"Vui lòng nhập thông tin",
+  "invalid_email": "Định dạng email không hợp lệ",
+  "password_invalid": "Mật khẩu không hợp lệ"
 
 }

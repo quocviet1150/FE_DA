@@ -10,7 +10,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 60vh;
+    min-height: 70vh;
 }
 
 .form-login {
@@ -81,3 +81,8 @@
     padding: 2%;
     width: 500px;
 }
+
+.fs-custom {
+    font-size: 12px;
+    margin-bottom: -4%;
+  }

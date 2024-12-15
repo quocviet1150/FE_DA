@@ -62,3 +62,37 @@
     border-radius: 50%;
     border: 1px solid #ccc;
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-button {
+    border: none;
+    padding: 13px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    &:hover {
+        background-color: #cfcac7;
+    }
+}
+
+.search-icon {
+    color: #ff5722;
+    font-size: 18px;
+}

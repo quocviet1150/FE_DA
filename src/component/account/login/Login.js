@@ -50,7 +50,6 @@ const Login = () => {
         const { emailOrUsername, password, errors } = formState;
         let valid = true;
 
-        // Kiểm tra toàn bộ trường trước khi gửi
         if (!emailOrUsername) {
             errors.emailOrUsername = t('please_enter_username_or_email');
             valid = false;
@@ -64,7 +63,6 @@ const Login = () => {
 
         if (!valid) return;
 
-        // Xử lý khi hợp lệ
         console.log({ emailOrUsername, password });
     };
 

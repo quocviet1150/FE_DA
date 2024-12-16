@@ -32,7 +32,7 @@ const Home = () => {
             <div className="d-flex justify-content-center pb-3" style={{ background: '#f5f5f5' }}>
                 <div style={{ width: '60%', background: '#FFFFFF' }}>
                     <div style={{ borderBottom: '1px solid #ccc', fontSize: '20px', color: "red" }} className="p-3">{t("top_search")}</div>
-                    <div>tesst</div>
+                    <div style={{borderRight:'1px solid #ccc'}}>tesst</div>
                 </div>
             </div>
         </>

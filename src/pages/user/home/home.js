@@ -2,11 +2,10 @@ import { useTranslation } from "react-i18next";
 import Header from "../../../component/header/header";
 import Carousels from "../carousel/carousel";
 import Directorys from "../directory/directory";
+import Brands from "../brand/brand";
 
 const Home = () => {
     const { t } = useTranslation();
-    console.log(t('connect_us'));
-
     const handleSearch = (searchValue) => {
         console.log("Dữ liệu tìm kiếm:", searchValue);
     };
@@ -32,7 +31,9 @@ const Home = () => {
             <div className="d-flex justify-content-center pb-3" style={{ background: '#f5f5f5' }}>
                 <div style={{ width: '60%', background: '#FFFFFF' }}>
                     <div style={{ borderBottom: '1px solid #ccc', fontSize: '20px', color: "red" }} className="p-3">{t("top_search")}</div>
-                    <div>tesst</div>
+                    <div style={{borderRight:'1px solid #ccc'}}>
+                        <Brands />
+                    </div>
                 </div>
             </div>
         </>

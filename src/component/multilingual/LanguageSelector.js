@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 import { useLoading } from "../loading/LoadingProvider";
 
 const languages = [
-    { code: "en", lang: "English" },
     { code: "vi", lang: "Việt Nam" },
+    { code: "en", lang: "English" },
     { code: "jp", lang: "Japan" }
 ];
 

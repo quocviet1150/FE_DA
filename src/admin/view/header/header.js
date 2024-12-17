@@ -1,27 +1,52 @@
 import React, { useState } from "react";
 
-
-import { FaList, FaRegHeart } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 import {
+  FiChevronLeft,
+  FiChevronRight,
   FiHome,
   FiLogOut,
-  FiArrowLeftCircle,
-  FiArrowRightCircle
+  FiPackage
 } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
-import { BiCog } from "react-icons/bi";
 
+import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../component/constants/constants";
 import "./header.css";
-import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader } from "react-pro-sidebar";
 
+const Header = ({ menuCollapse, setMenuCollapse }) => {
 
-const Header = () => {
-  const [menuCollapse, setMenuCollapse] = useState(false);
+  const [routes] = useState([
+    {
+      path: ROUTES.DASHBOARD,
+      label: "Dashboard",
+      icon: <FiHome />,
+    },
+    {
+      path: ROUTES.PRODUCT,
+      label: "Products",
+      icon: <FiPackage />,
+    },
+    {
+      path: ROUTES.BRAND,
+      label: "Brands",
+      icon: <FaList />,
+    }
+  ]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const menuIconClick = () => {
-    menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
+    setMenuCollapse(!menuCollapse);
   };
+
+  const handleMenuClick = (path) => {
+    navigate(path);
+  };
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
@@ -29,22 +54,31 @@ const Header = () => {
         <ProSidebar collapsed={menuCollapse}>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem active={true} icon={<FiHome />}>
-                Home
-              </MenuItem>
-              <MenuItem icon={<FaList />}>Category</MenuItem>
-              <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
-              <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
-              <MenuItem icon={<BiCog />}>Settings</MenuItem>
+              {routes.map((route, index) => (
+                <MenuItem
+                  key={index}
+                  style={{ fontSize: "12px" }}
+                  active={isActive(route.path)}
+                  onClick={() => handleMenuClick(route.path)}
+                  icon={route.icon}
+                >
+                  {route.label}
+                </MenuItem>
+              ))}
             </Menu>
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
+              {menuCollapse ? <MenuItem onClick={menuIconClick} icon={<FiChevronRight />}></MenuItem> :
+                <MenuItem onClick={menuIconClick} icon={<FiChevronLeft />}>Thu nhỏ</MenuItem>
+              }
+              {/* {menuCollapse ?
+                  <FiChevronRight /> :
+                  <> <FiChevronLeft /> Test</>}
+              </MenuItem> */}
               <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+
             </Menu>
-            <div className="closemenu" onClick={menuIconClick}>
-              {menuCollapse ? <FiArrowRightCircle /> : <FiArrowLeftCircle />}
-            </div>
           </SidebarFooter>
         </ProSidebar>
       </div>

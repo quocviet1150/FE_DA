@@ -1,11 +1,11 @@
-import { CCard, CCardBody, CCardHeader, CCol, CRow } from '@coreui/react';
+import { CButton, CButtonGroup, CCard, CCardBody, CCardHeader, CCol, CRow } from '@coreui/react';
 import {
     CChartBar,
     CChartLine
 } from '@coreui/react-chartjs';
 import React from 'react';
-import './dashboard.css';
 import WidgetsBrand from '../widgets/widgetsBrand';
+import './dashboard.css';
 
 const Dashboards = () => {
     const random = () => Math.round(Math.random() * 100)
@@ -16,14 +16,14 @@ const Dashboards = () => {
             </div>
 
             <div className="background-f3f4f7" style={{
-                padding: '2% 5%', 
+                padding: '2% 5%',
                 height: '88vh',
                 overflowY: 'auto',
             }}>
                 <WidgetsBrand />
                 <CRow style={{ marginTop: '2%' }}>
                     <CCol xs={6}>
-                        <CCard className="mb-4" style={{ height: '60vh' }}>
+                        <CCard className="mb-4">
                             <CCardHeader>
                                 Bar Chart
                             </CCardHeader>
@@ -46,30 +46,54 @@ const Dashboards = () => {
                     </CCol>
 
                     <CCol xs={6}>
-                        <CCard className="mb-4" style={{ height: '60vh' }}>
-                            <CCardHeader>
-                                Line Chart
+                        <CCard className="mb-4">
+                            <CCardHeader className='d-flex w-100 justify-content-flex-end'>
+                                <div className='d-flex w-50'>Line Chart</div>
+                                <div className='d-flex w-50'>
+                                    <CCol sm={7} className="d-none d-md-block">
+                                        <CButtonGroup className="float-end me-3">
+                                            {['Month', 'Year'].map((value) => (
+                                                <CButton
+                                                    color="outline-secondary"
+                                                    key={value}
+                                                    className="mx-0"
+                                                    active={value === 'Month'}
+                                                >
+                                                    {value}
+                                                </CButton>
+                                            ))}
+                                        </CButtonGroup>
+                                    </CCol>
+                                </div>
                             </CCardHeader>
                             <CCardBody>
                                 <CChartLine
                                     data={{
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July','Aug','Sep','Oct','Nov','Dec'],
                                         datasets: [
                                             {
-                                                label: 'My First dataset',
+                                                label: 'ONE',
                                                 backgroundColor: 'rgba(220, 220, 220, 0.2)',
                                                 borderColor: 'rgba(220, 220, 220, 1)',
                                                 pointBackgroundColor: 'rgba(220, 220, 220, 1)',
                                                 pointBorderColor: '#fff',
-                                                data: [random(), random(), random(), random(), random(), random(), random()],
+                                                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
                                             },
                                             {
-                                                label: 'My Second dataset',
+                                                label: 'TWO',
                                                 backgroundColor: 'rgba(151, 187, 205, 0.2)',
                                                 borderColor: 'rgba(151, 187, 205, 1)',
                                                 pointBackgroundColor: 'rgba(151, 187, 205, 1)',
                                                 pointBorderColor: '#fff',
-                                                data: [random(), random(), random(), random(), random(), random(), random()],
+                                                data: [random(), random(), random(), random(), random(), random(), random() , random(), random(), random(), random(), random()]
+                                            },
+                                            {
+                                                label: 'THREE',
+                                                backgroundColor: 'rgba(153, 125, 65, 0.2)',
+                                                borderColor: 'rgba(153, 125, 65, 1)',
+                                                pointBackgroundColor: 'rgba(153, 125, 65, 1)',
+                                                pointBorderColor: '#fff',
+                                                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
                                             },
                                         ],
                                     }}

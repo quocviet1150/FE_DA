@@ -40,5 +40,8 @@
   "directory": "ディレクトリ",
   "top_search": "トップ検索",
   "buy": "購入",
-  "month": "月"
+  "month": "月",
+  "dashboard": "ダッシュボード",
+  "product": "製品",
+  "product_type": "製品タイプ"
 }

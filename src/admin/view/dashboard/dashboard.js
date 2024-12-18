@@ -5,6 +5,7 @@ import {
 } from '@coreui/react-chartjs';
 import React from 'react';
 import './dashboard.css';
+import WidgetsBrand from '../widgets/widgetsBrand';
 
 const Dashboards = () => {
     const random = () => Math.round(Math.random() * 100)
@@ -14,10 +15,13 @@ const Dashboards = () => {
                 <span className="breadcrumb-active">Dashboard</span>
             </div>
 
-            <div className="background-f3f4f7" style={{ padding: '1%' }}>
-                <CRow>
-                    <CCol xs={12}>
-                    </CCol>
+            <div className="background-f3f4f7" style={{
+                padding: '2% 5%', 
+                height: '88vh',
+                overflowY: 'auto',
+            }}>
+                <WidgetsBrand />
+                <CRow style={{ marginTop: '2%' }}>
                     <CCol xs={6}>
                         <CCard className="mb-4" style={{ height: '60vh' }}>
                             <CCardHeader>

@@ -6,13 +6,16 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../component/constants/constants";
 import "./header.css";
+import { useTranslation } from "react-i18next";
 
 const Header = ({ menuCollapse, setMenuCollapse }) => {
 
+  const { t } = useTranslation();
+
   const [routes] = useState([
-    { path: ROUTES.DASHBOARD, label: "Dashboard", icon: <FiHome /> },
-    { path: ROUTES.PRODUCT_TYPE, label: "Product Types", icon: <FiPackage /> },
-    { path: ROUTES.PRODUCT, label: "Products", icon: <FiPackage /> },
+    { path: ROUTES.DASHBOARD, label: t("dashboard"), icon: <FiHome /> },
+    { path: ROUTES.PRODUCT_TYPE, label: t("product_type"), icon: <FiPackage /> },
+    { path: ROUTES.PRODUCT, label: t("product"), icon: <FiPackage /> },
     { path: ROUTES.BRAND, label: "Brands", icon: <FaList /> }
   ]);
 

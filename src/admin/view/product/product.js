@@ -1,4 +1,4 @@
-const ProductTypes = () => {
+const Products = () => {
     return (
         <div>
             <div className="breadcrumb">
@@ -6,10 +6,10 @@ const ProductTypes = () => {
                     Dashboard
                 </a>
                 <span className="breadcrumb-separator"> / </span>
-                <span className="breadcrumb-active">Product type</span>
+                <span className="breadcrumb-active">Product</span>
             </div>
             <div className="background-f3f4f7">test</div>
         </div>
     );
 };
-export default ProductTypes;
+export default Products;

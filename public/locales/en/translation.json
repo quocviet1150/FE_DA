@@ -40,5 +40,8 @@
   "directory": "DIRECTORY",
   "top_search": "TOP SEARCH",
   "buy": "Buy",
-  "month": "month"
+  "month": "month",
+  "dashboard": "Dashboard",
+  "product": "Products",
+  "product_type": "Product Types"
 }

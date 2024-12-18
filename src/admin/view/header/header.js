@@ -11,6 +11,7 @@ const Header = ({ menuCollapse, setMenuCollapse }) => {
 
   const [routes] = useState([
     { path: ROUTES.DASHBOARD, label: "Dashboard", icon: <FiHome /> },
+    { path: ROUTES.PRODUCT_TYPE, label: "Product Types", icon: <FiPackage /> },
     { path: ROUTES.PRODUCT, label: "Products", icon: <FiPackage /> },
     { path: ROUTES.BRAND, label: "Brands", icon: <FaList /> }
   ]);

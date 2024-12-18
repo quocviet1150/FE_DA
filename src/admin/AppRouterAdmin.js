@@ -4,6 +4,7 @@ import "../i18n";
 import Dashboards from "./view/dashboard/dashboard";
 import Login from "./view/login/login";
 import Brands from "./view/brand/brand";
+import ProductTypes from "./view/productType/productType";
 
 const AppRouterAdmin = () => {
   return (
@@ -11,6 +12,7 @@ const AppRouterAdmin = () => {
       <Route path="" element={<Login />} />
       <Route path="dashboard" element={<Dashboards />} />
       <Route path="brand" element={<Brands />} />
+      <Route path="product-type" element={<ProductTypes />} />
     </Routes>
   );
 };

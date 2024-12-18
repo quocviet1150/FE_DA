@@ -22,19 +22,19 @@ const AppAdmin = () => {
 
     return (
         <>
-            <div style={{ fontFamily: "sans-serif", textAlign: "center" }}>
-                <HeaderBar  menuCollapse={menuCollapse}/>
+            {isLoggedIn && (<div style={{ fontFamily: "sans-serif", textAlign: "center" }}>
+                <HeaderBar menuCollapse={menuCollapse} />
                 <Header menuCollapse={menuCollapse} setMenuCollapse={setMenuCollapse} />
                 <div
                     style={{
                         flexGrow: 1,
-                        marginLeft: menuCollapse ? "80px" : "9%",
+                        marginLeft: menuCollapse ? "80px" : "12%",
                         transition: "margin-left 0.3s ease",
                     }}
                 >
                     <AppRouterAdmin />
                 </div>
-            </div>
+            </div>)}
         </>
     );
 };

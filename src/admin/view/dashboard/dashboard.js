@@ -52,12 +52,12 @@ const Dashboards = () => {
                                 <div className='d-flex w-50'>
                                     <CCol sm={7} className="d-none d-md-block">
                                         <CButtonGroup className="float-end me-3">
-                                            {['Month', 'Year'].map((value) => (
+                                            {['month', 'year'].map((value) => (
                                                 <CButton
                                                     color="outline-secondary"
                                                     key={value}
                                                     className="mx-0"
-                                                    active={value === 'Month'}
+                                                    active={value === 'year'}
                                                 >
                                                     {value}
                                                 </CButton>
@@ -86,14 +86,6 @@ const Dashboards = () => {
                                                 pointBackgroundColor: 'rgba(151, 187, 205, 1)',
                                                 pointBorderColor: '#fff',
                                                 data: [random(), random(), random(), random(), random(), random(), random() , random(), random(), random(), random(), random()]
-                                            },
-                                            {
-                                                label: 'THREE',
-                                                backgroundColor: 'rgba(153, 125, 65, 0.2)',
-                                                borderColor: 'rgba(153, 125, 65, 1)',
-                                                pointBackgroundColor: 'rgba(153, 125, 65, 1)',
-                                                pointBorderColor: '#fff',
-                                                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
                                             },
                                         ],
                                     }}

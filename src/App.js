@@ -7,7 +7,7 @@ import "./i18n";
 
 const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense >
       <LoadingProvider>
         <Loading />
         <AppRouter />

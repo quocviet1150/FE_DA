@@ -6,16 +6,17 @@ import "../i18n";
 import Register from "../component/account/register/register";
 import Home from "../pages/user/home/home";
 import AppAdmin from "../admin/AppAdmin";
+import Page404 from "../error/page404";
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes path="/">
-        <Route path="" element={<Login />} />
         <Route path="login" element={<Login />} />
         <Route path="reset" element={<ForgotPassword />} />
         <Route path="register" element={<Register />} />
-        <Route path="home" element={<Home />} />
+        <Route path="" element={<Home />} />
+        <Route path="*" element={<Page404 />} />
         <Route path="admin/*" element={<AppAdmin />} />
       </Routes>
     </Router>

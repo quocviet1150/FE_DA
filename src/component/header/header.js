@@ -7,8 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '../multilingual/LanguageSelector';
 import './header.css';
 import Popup from '../popup/popup';
+import { useLoading } from '../loading/LoadingProvider';
 
 const Header = ({ onSearch }) => {
+    const { showLoading, hideLoading } = useLoading();
     const { t } = useTranslation();
     const navigate = useNavigate();
     const token = "";
@@ -29,11 +31,27 @@ const Header = ({ onSearch }) => {
     };
 
     const handleClickLogin = () => {
-        navigate('/login');
+        showLoading();
+        setTimeout(() => {
+            navigate('/login');
+            hideLoading();
+        }, 300);
     };
 
     const handleClickRegister = () => {
-        navigate('/register');
+        showLoading();
+        setTimeout(() => {
+            navigate('/register');
+            hideLoading();
+        }, 300);
+    };
+
+    const handleStateHome = () => {
+        showLoading();
+        setTimeout(() => {
+            navigate('/');
+            hideLoading();
+        }, 500);
     };
 
     const [showPopup, setShowPopup] = useState(false);
@@ -72,7 +90,9 @@ const Header = ({ onSearch }) => {
             <div className="d-flex justify-content-center">
                 <div className="d-flex w-60 pt-2 pb-2">
                     <div style={{ width: "10%" }} className="d-flex align-items-center">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style={{ height: "60px" }} alt="ups" />
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                            style={{ height: "60px", cursor: 'pointer' }}
+                            alt="ups" onClick={handleStateHome} />
                     </div>
 
                     <div style={{ width: "75%" }} className="d-flex align-items-center">

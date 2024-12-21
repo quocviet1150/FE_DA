@@ -7,8 +7,19 @@ const Loading = () => {
     if (!loading) return null;
 
     return (
-        <div className="center-container">
-            <div class="loader"></div>
+        <div class="spinner">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div style={{ color: 'white' }}>Loading...</div>
         </div>
     )
 }

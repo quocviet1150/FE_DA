@@ -1,12 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useLoading } from "../loading/LoadingProvider";
 
 const HeaderAccount = ({ text }) => {
 
     const navigate = useNavigate();
+    const { showLoading, hideLoading } = useLoading();
 
     const handleStateHome = () => {
-        navigate('/home');
+        showLoading();
+        setTimeout(() => {
+            navigate('/');
+            hideLoading();
+        }, 300);
     };
 
     const { t } = useTranslation();

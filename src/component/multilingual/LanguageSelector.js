@@ -24,12 +24,14 @@ const LanguageSelector = () => {
 
     const changeLanguage = (lng) => {
         showLoading();
-        i18n.changeLanguage(lng)
-            .then(() => {
-                const selectedLang = languages.find((language) => language.code === lng)?.lang;
-                setSelectedLanguage(selectedLang || "English");
-            })
-            .finally(() => hideLoading());
+        setTimeout(() => {
+            hideLoading();
+            i18n.changeLanguage(lng)
+                .then(() => {
+                    const selectedLang = languages.find((language) => language.code === lng)?.lang;
+                    setSelectedLanguage(selectedLang || "English");
+                });
+        }, 300);
     };
 
     return (
@@ -38,7 +40,7 @@ const LanguageSelector = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <FontAwesomeIcon icon={faEarth} className="earth-icon" style={{marginRight:'5px'}}/>
+            <FontAwesomeIcon icon={faEarth} className="earth-icon" style={{ marginRight: '5px' }} />
             <span className="selected-language">{selectedLanguage}</span>
             {isHovered && (
                 <div className="language-selector">

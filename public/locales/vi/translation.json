@@ -44,10 +44,13 @@
   "dashboard": "Trang chủ",
   "product": "Sản phẩm",
   "product_type": "Loại sản phẩm",
-  "look_like_page404":"Có vẻ như bạn đang bị lạc.",
-  "page_not_found":"Trang mà bạn đang tìm kiếm không tồn tại!",
-  "go_to_home":"Về trang chủ",
-  "top":"BÁN CHẠY",
-  "new_product_one":"Sản phẩm mới nhất",
-  "sold":"Đã bán"
+  "look_like_page404": "Có vẻ như bạn đang bị lạc.",
+  "page_not_found": "Trang mà bạn đang tìm kiếm không tồn tại!",
+  "go_to_home": "Về trang chủ",
+  "top": "BÁN CHẠY",
+  "new_product_one": "Sản phẩm mới nhất",
+  "sold": "Đã bán",
+  "account_is_locked": "Tài khoản của bạn đã bị khóa!",
+  "login_failed": "Đăng nhập thất bại",
+  "invalid_username_or_password": "Tên đăng nhập hoặc mật khẩu không hợp lệ"
 }

@@ -3,14 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/ReactToastify.css';
+import { AccountApi } from '../../../api/account/accountApi';
 import '../../account/Account.css';
-import HeaderAccount from '../../header/headerAccount';
 import FooterAccount from '../../footer/footer';
+import HeaderAccount from '../../header/headerAccount';
+import { useLoading } from '../../loading/LoadingProvider';
 
 const Login = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+    const { showLoading, hideLoading } = useLoading();
 
     const [formState, setFormState] = useState({
         emailOrUsername: '',
@@ -22,7 +27,7 @@ const Login = () => {
     });
 
     const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
+        setShowPassword((prevState) => !prevState);
     };
 
     const handleChange = (e) => {
@@ -37,11 +42,11 @@ const Login = () => {
             errors[name] = '';
         }
 
-        setFormState({
-            ...formState,
+        setFormState((prevState) => ({
+            ...prevState,
             [name]: value,
             errors,
-        });
+        }));
     };
 
     const handelSubmit = (e) => {
@@ -59,11 +64,39 @@ const Login = () => {
             valid = false;
         }
 
-        setFormState({ ...formState, errors });
+        setFormState((prevState) => ({ ...prevState, errors }));
 
         if (!valid) return;
 
-        console.log({ emailOrUsername, password });
+        const data = {
+            usernameOrEmail: emailOrUsername,
+            password,
+        };
+
+        try {
+            showLoading();
+            AccountApi.login(data)
+                .then((response) => {
+                    localStorage.setItem('user', JSON.stringify(response.data));
+                    navigate('/');
+                    hideLoading();
+                })
+                .catch((error) => {
+                    hideLoading();
+                    console.log(error?.response);
+
+                    if (error?.response?.status === 423) {
+                        toast.error(t('account_is_locked'));
+                    } else if (error?.response?.status === 401) {
+                        toast.error(t('invalid_username_or_password'));
+                    } else {
+                        toast.error(t('login_failed'));
+                    }
+                });
+        } catch (error) {
+            hideLoading();
+            console.log(error);
+        }
     };
 
     const handleClickForgotPassword = () => {
@@ -98,7 +131,9 @@ const Login = () => {
                                         onChange={handleChange}
                                     />
                                     {formState.errors.emailOrUsername && (
-                                        <div className="text-danger" style={{ fontSize: '12px' }}>{formState.errors.emailOrUsername}</div>
+                                        <div className="text-danger" style={{ fontSize: '12px' }}>
+                                            {formState.errors.emailOrUsername}
+                                        </div>
                                     )}
                                 </div>
 
@@ -118,14 +153,20 @@ const Login = () => {
                                         <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                     </span>
                                     {formState.errors.password && (
-                                        <div className="text-danger" style={{ fontSize: '12px' }}>{formState.errors.password}</div>
+                                        <div className="text-danger" style={{ fontSize: '12px' }}>
+                                            {formState.errors.password}
+                                        </div>
                                     )}
                                 </div>
 
                                 <button type='submit' className='btn btn-primary w-100 mt-4 p-2'>{t("login")}</button>
                                 <div className='d-flex w-100 pt-2'>
-                                    <div className='w-50 forgot-password' onClick={handleClickForgotPassword}>{t("forgot_password")}</div>
-                                    <div className='w-50 d-flex justify-content-end forgot-password' onClick={handleClickUnlockAccount}>{t("unlock_account")}</div>
+                                    <div className='w-50 forgot-password' onClick={handleClickForgotPassword}>
+                                        {t("forgot_password")}
+                                    </div>
+                                    <div className='w-50 d-flex justify-content-end forgot-password' onClick={handleClickUnlockAccount}>
+                                        {t("unlock_account")}
+                                    </div>
                                 </div>
 
                                 <div className="separator">

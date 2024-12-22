@@ -49,5 +49,8 @@
   "go_to_home": "Go to home",
   "top": "TOP",
   "new_product_one": "Newest product",
-  "sold": "Sold"
+  "sold": "Sold",
+  "account_is_locked": "Your account is locked!",
+  "login_failed": "Login failed",
+  "invalid_username_or_password": "Invalid username or password"
 }

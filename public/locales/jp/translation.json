@@ -49,5 +49,8 @@
   "go_to_home": "ホームに戻る",
   "top": "トップ",
   "new_product_one": "最新の製品",
-  "sold": "販売済み"
+  "sold": "販売済み",
+  "account_is_locked": "アカウントがロックされています！",
+  "login_failed": "ログインに失敗しました",
+  "invalid_username_or_password": "無効なユーザー名またはパスワード"
 }

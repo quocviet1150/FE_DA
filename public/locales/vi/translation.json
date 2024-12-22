@@ -43,5 +43,11 @@
   "month": "Tháng",
   "dashboard": "Trang chủ",
   "product": "Sản phẩm",
-  "product_type": "Loại sản phẩm"
+  "product_type": "Loại sản phẩm",
+  "look_like_page404":"Có vẻ như bạn đang bị lạc.",
+  "page_not_found":"Trang mà bạn đang tìm kiếm không tồn tại!",
+  "go_to_home":"Về trang chủ",
+  "top":"BÁN CHẠY",
+  "new_product_one":"Sản phẩm mới nhất",
+  "sold":"Đã bán"
 }

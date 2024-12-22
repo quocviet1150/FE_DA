@@ -43,5 +43,11 @@
   "month": "月",
   "dashboard": "ダッシュボード",
   "product": "製品",
-  "product_type": "製品タイプ"
+  "product_type": "製品タイプ",
+  "look_like_page404": "迷子のようです。",
+  "page_not_found": "お探しのページは利用できません！",
+  "go_to_home": "ホームに戻る",
+  "top": "トップ",
+  "new_product_one": "最新の製品",
+  "sold": "販売済み"
 }

@@ -42,7 +42,7 @@
 .carousel {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: start;
 }
 
 .carousel-item-product {

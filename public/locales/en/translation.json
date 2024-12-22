@@ -36,12 +36,18 @@
   "all_rights_reserved_us": "© 2024 VietShop. All rights belong to VietNQ.",
   "connect_us": "Connect with us.",
   "text_search": "VietShop free shipping - Sign up now!",
-  "no_product": "No product" ,
+  "no_product": "No product",
   "directory": "DIRECTORY",
   "top_search": "TOP SEARCH",
   "buy": "Buy",
   "month": "month",
   "dashboard": "Dashboard",
   "product": "Products",
-  "product_type": "Product Types"
+  "product_type": "Product Types",
+  "look_like_page404": "Look like you're lost.",
+  "page_not_found": "The page you are looking for not avaible!",
+  "go_to_home": "Go to home",
+  "top": "TOP",
+  "new_product_one": "Newest product",
+  "sold": "Sold"
 }

@@ -1,9 +1,24 @@
 import React from 'react'
-import './page404.css'
-import Header from '../component/header/header'
+import { useNavigate } from 'react-router-dom'
 import FooterAccount from '../component/footer/footer'
+import Header from '../component/header/header'
+import { useLoading } from '../component/loading/LoadingProvider'
+import './page404.css'
+import { useTranslation } from 'react-i18next'
 
 const Page404 = () => {
+    const { showLoading, hideLoading } = useLoading();
+    const navigate = useNavigate();
+    const { t } = useTranslation();
+
+    const handleStateHome = () => {
+        showLoading();
+        setTimeout(() => {
+            navigate('/');
+            hideLoading();
+        }, 300);
+    }
+
     return (
         <div>
             <Header />
@@ -20,19 +35,19 @@ const Page404 = () => {
 
                                 <div class="contant_box_404">
                                     <h3 class="h2">
-                                        Look like you're lost
+                                        {t("look_like_page404")}
                                     </h3>
 
-                                    <p>the page you are looking for not avaible!</p>
+                                    <p>{t("page_not_found")}</p>
 
-                                    <a href="/" class="link_404">Go to Home</a>
+                                    <button onClick={handleStateHome} class="link_404">{t("go_to_home")}</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <FooterAccount/>
+            <FooterAccount />
         </div>
     )
 }

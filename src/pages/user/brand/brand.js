@@ -10,18 +10,13 @@ const Brands = () => {
     const { t } = useTranslation();
 
     const products = [
-        { id: 1, name: "Khăn Choàng Cổ", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "121000" },
-        { id: 2, name: "Quần Lót Nam", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "149000" },
-        { id: 3, name: "Bút Mực Gel", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "130000" },
-        { id: 4, name: "Giấy Vệ Sinh Cuộn", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "104000" },
-        { id: 5, name: "Len", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "159000" },
-        { id: 6, name: "Quần Ống Rộng Nữ", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "131000" },
-        { id: 7, name: "Sản phẩm 7", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "111000" },
-        { id: 8, name: "Sản phẩm 8", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "200000" },
-        { id: 9, name: "Sản phẩm 9", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "300000" },
-        { id: 10, name: "Sản phẩm 10", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "50000" },
-        { id: 11, name: "Sản phẩm 11", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "210000" },
-        { id: 12, name: "Sản phẩm 12", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "112000" },
+        { id: 1, name: "Khăn Choàng Cổ", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "21000" },
+        { id: 2, name: "Quần Lót Nam", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "49000" },
+        { id: 3, name: "Bút Mực Gel", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "30000" },
+        { id: 4, name: "Giấy Vệ Sinh Cuộn", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "04000" },
+        { id: 5, name: "Len", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "59000" },
+        { id: 6, name: "Quần Ống Rộng Nữ", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "31000" },
+        { id: 7, name: "Sản phẩm 7", img: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", sold: "11000" },
     ];
 
     const itemsPerSlide = 6;
@@ -41,6 +36,16 @@ const Brands = () => {
                 : prevIndex - itemsPerSlide
         );
     };
+
+    const formatNumber = (num) => {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1).replace('.', ',') + "M";
+        } else if (num >= 1000) {
+            return (num / 1000).toFixed(1).replace('.', ',') + "k";
+        }
+        return num;
+    };
+
 
     const isFirstSlide = currentIndex === 0;
     const isLastSlide = currentIndex + itemsPerSlide >= products.length;
@@ -62,10 +67,10 @@ const Brands = () => {
                     .slice(currentIndex, currentIndex + itemsPerSlide)
                     .map((product) => (
                         <div key={product.id} className="carousel-item-product">
-                            <div className="top-badge">TOP</div>
+                            <div className="top-badge">{t("top")}</div>
                             <img src={product.img} alt={product.name} className="product-img" />
                             <div className="product-info">
-                                <span className="product-sold">{t("buy")} {product.sold}/{t("month")}</span>
+                                <span className="product-sold">{t("buy")} {formatNumber(product.sold)}/{t("month")}</span>
                                 <h3 className="product-name">{product.name}</h3>
                             </div>
                         </div>

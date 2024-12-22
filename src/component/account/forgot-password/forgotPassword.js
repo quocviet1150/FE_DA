@@ -6,6 +6,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import '../../account/Account.css';
 import HeaderAccount from '../../header/headerAccount';
 import FooterAccount from '../../footer/footer';
+import { useLoading } from '../../loading/LoadingProvider';
+import { toast } from 'react-toastify';
+import { AccountApi } from '../../../api/account/accountApi';
 
 const ForgotPassword = () => {
     const { t } = useTranslation();
@@ -17,6 +20,7 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const { showLoading, hideLoading } = useLoading();
 
 
     const handleEmailChange = (e) => {
@@ -40,8 +44,25 @@ const ForgotPassword = () => {
             return;
         }
 
-
-        console.log('submit');
+        try {
+            showLoading();
+            AccountApi.unlock_account(email)
+                .then(() => {
+                    navigate('/verify');
+                    hideLoading();
+                })
+                .catch((error) => {
+                    hideLoading();
+                    if (error?.response?.status === 400) {
+                        toast.error(t('email_required'));
+                    } else {
+                        toast.error(t('system_error'));
+                    }
+                });
+        } catch (error) {
+            hideLoading();
+            console.log(error);
+        }
     };
 
     return (

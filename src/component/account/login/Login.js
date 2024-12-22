@@ -83,8 +83,6 @@ const Login = () => {
                 })
                 .catch((error) => {
                     hideLoading();
-                    console.log(error?.response);
-
                     if (error?.response?.status === 423) {
                         toast.error(t('account_is_locked'));
                     } else if (error?.response?.status === 401) {
@@ -95,7 +93,6 @@ const Login = () => {
                 });
         } catch (error) {
             hideLoading();
-            console.log(error);
         }
     };
 

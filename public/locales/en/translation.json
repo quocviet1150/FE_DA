@@ -52,5 +52,10 @@
   "sold": "Sold",
   "account_is_locked": "Your account is locked!",
   "login_failed": "Login failed",
-  "invalid_username_or_password": "Invalid username or password"
+  "invalid_username_or_password": "Invalid username or password",
+  "email_required":"Email is required",
+  "system_error":"System error, please contact administrator",
+  "vertify": "Vertify",
+  "code": "Code",
+  "verify_success": "Verify success"
 }

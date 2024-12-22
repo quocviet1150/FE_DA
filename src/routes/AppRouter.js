@@ -7,6 +7,7 @@ import Register from "../component/account/register/register";
 import Home from "../pages/user/home/home";
 import AppAdmin from "../admin/AppAdmin";
 import Page404 from "../error/page404";
+import Verify from "../component/account/verify/verify";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="" element={<Home />} />
         <Route path="*" element={<Page404 />} />
+        <Route path="verify" element={<Verify />} />
         <Route path="admin/*" element={<AppAdmin />} />
       </Routes>
     </Router>

@@ -52,5 +52,10 @@
   "sold": "販売済み",
   "account_is_locked": "アカウントがロックされています！",
   "login_failed": "ログインに失敗しました",
-  "invalid_username_or_password": "無効なユーザー名またはパスワード"
+  "invalid_username_or_password": "無効なユーザー名またはパスワード",
+  "email_required":"メールは必須です",
+  "system_error":"システムエラー、管理者に連絡してください",
+  "vertify": "検証",
+  "code": "コード",
+  "verify_success": "検証に成功しました"
 }

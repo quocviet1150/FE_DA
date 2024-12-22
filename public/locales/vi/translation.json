@@ -52,5 +52,10 @@
   "sold": "Đã bán",
   "account_is_locked": "Tài khoản của bạn đã bị khóa!",
   "login_failed": "Đăng nhập thất bại",
-  "invalid_username_or_password": "Tên đăng nhập hoặc mật khẩu không hợp lệ"
+  "invalid_username_or_password": "Tên đăng nhập hoặc mật khẩu không hợp lệ",
+  "email_required": "Email là bắt buộc",
+  "system_error": "Lỗi hệ thống vui lòng liên hệ quản trị viên",
+  "vertify": "Xác thực",
+  "code": "Mã xác thực",
+  "verify_success": "Xác thực thành công"
 }

@@ -93,6 +93,7 @@ const Login = () => {
                 });
         } catch (error) {
             hideLoading();
+            toast.error(t('system_error'));
         }
     };
 

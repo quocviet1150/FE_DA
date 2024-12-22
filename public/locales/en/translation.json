@@ -53,9 +53,13 @@
   "account_is_locked": "Your account is locked!",
   "login_failed": "Login failed",
   "invalid_username_or_password": "Invalid username or password",
-  "email_required":"Email is required",
-  "system_error":"System error, please contact administrator",
+  "email_required": "Email is required",
+  "system_error": "System error, please contact administrator",
   "vertify": "Vertify",
   "code": "Code",
-  "verify_success": "Verify success"
+  "check_mail": "Please check your email for new password information",
+  "verify_success": "Verify success",
+  "email_already_exists": "Email already exists",
+  "username_already_exists": "Username already exists",
+  "register_success": "Please check your email to confirm your account"
 }

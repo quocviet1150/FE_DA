@@ -10,11 +10,15 @@ import Popup from '../popup/popup';
 import { useLoading } from '../loading/LoadingProvider';
 
 const Header = ({ onSearch }) => {
+    const [showPopup, setShowPopup] = useState(false);
     const { showLoading, hideLoading } = useLoading();
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const token = "";
+    const user = JSON.parse(localStorage.getItem('user'));
+    const token = user.token;
     const [searchText, setSearchText] = useState("");
+    console.log(user);
+    
 
     const handleInputChange = (e) => {
         setSearchText(e.target.value);
@@ -54,10 +58,13 @@ const Header = ({ onSearch }) => {
         }, 500);
     };
 
-    const [showPopup, setShowPopup] = useState(false);
 
     const handelNavigateCart = () => {
-        navigate('/cart');
+        showLoading();
+        setTimeout(() => {
+            navigate('/cart');
+            hideLoading();
+        }, 500);
     };
 
     return (
@@ -72,7 +79,7 @@ const Header = ({ onSearch }) => {
                         {token ? (
                             <div className="d-flex gap-2" style={{ marginLeft: "20px" }}>
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                                    className="img-login" alt="ups" />  VietNQ
+                                    className="img-login" alt="ups" />  {user.username}
                             </div>
                         ) : (
                             <div className="d-flex mr-2">

@@ -57,5 +57,9 @@
   "system_error": "Lỗi hệ thống vui lòng liên hệ quản trị viên",
   "vertify": "Xác thực",
   "code": "Mã xác thực",
-  "verify_success": "Xác thực thành công"
+  "verify_success": "Xác thực thành công",
+  "check_mail": "Vui lòng kiểm tra email của bạn để xem thông tin mật khâu mới",
+  "register_success": "Vui lòng kiểm tra email của bạn để xác nhận tài khoản",
+  "email_already_exists": "Email đã tồn tại",
+  "username_already_exists": "Tên đăng nhập đã tồn tại"
 }

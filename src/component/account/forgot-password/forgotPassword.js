@@ -46,22 +46,39 @@ const ForgotPassword = () => {
 
         try {
             showLoading();
-            AccountApi.unlock_account(email)
-                .then(() => {
-                    navigate('/verify');
-                    hideLoading();
-                })
-                .catch((error) => {
-                    hideLoading();
-                    if (error?.response?.status === 400) {
-                        toast.error(t('email_required'));
-                    } else {
-                        toast.error(t('system_error'));
-                    }
-                });
+            if (type === 'forgot') {
+                AccountApi.forgot_password(email)
+                    .then(() => {
+                        toast.success(t('check_mail'));
+                        navigate('/login');
+                        hideLoading();
+                    })
+                    .catch((error) => {
+                        hideLoading();
+                        if (error?.response?.status === 400) {
+                            toast.error(t('email_required'));
+                        } else {
+                            toast.error(t('system_error'));
+                        }
+                    });
+            } else {
+                AccountApi.unlock_account(email)
+                    .then(() => {
+                        navigate('/verify');
+                        hideLoading();
+                    })
+                    .catch((error) => {
+                        hideLoading();
+                        if (error?.response?.status === 400) {
+                            toast.error(t('email_required'));
+                        } else {
+                            toast.error(t('system_error'));
+                        }
+                    });
+            }
         } catch (error) {
             hideLoading();
-            console.log(error);
+            toast.error(t('system_error'));
         }
     };
 

@@ -5,12 +5,16 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FooterAccount from "../../footer/footer";
+import { AccountApi } from "../../../api/account/accountApi";
+import { toast } from "react-toastify";
+import { useLoading } from "../../loading/LoadingProvider";
 
 const Register = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
+    const { showLoading, hideLoading } = useLoading();
 
     const [formState, setFormState] = useState({
         email: '',
@@ -93,10 +97,37 @@ const Register = () => {
 
         if (!isValid) return;
 
-        const { email, username, password, confirmPassword, firstName, lastName } = formState;
-        const params = { email, username, password, confirmPassword, firstName, lastName };
-        console.log("Submitted Data:", params);
+        const data = {
+            email: formState.email,
+            username: formState.username,
+            password: formState.password,
+            repeatPassword: formState.confirmPassword,
+            firstName: formState.firstName,
+            lastName: formState.lastName
+        };
 
+        try {
+            showLoading();
+            AccountApi.register(data)
+                .then(() => {
+                    toast.success(t('register_success'));
+                    navigate('/verify');
+                    hideLoading();
+                })
+                .catch((error) => {
+                    if (error?.response?.status === 409 && error?.response?.data === 'Email already exists') {
+                        toast.error(t('email_already_exists'));
+                    } else if (error?.response?.status === 409 && error?.response?.data === 'Username already exists') {
+                        toast.error(t('username_already_exists'));
+                    } else {
+                        toast.error(t('system_error'));
+                    }
+                    hideLoading();
+                });
+        } catch (error) {
+            hideLoading();
+            toast.error(t('system_error'));
+        }
     };
 
     const handleClickLogin = () => {

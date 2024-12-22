@@ -43,7 +43,7 @@ const Verify = () => {
                 });
         } catch (error) {
             hideLoading();
-            console.log(error);
+            toast.error(t('system_error'));
         }
 
     }

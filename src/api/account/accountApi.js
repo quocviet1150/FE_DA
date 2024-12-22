@@ -5,7 +5,9 @@ const URL = "http://localhost:8080";
 export const AccountApi = {
     login,
     verify,
-    unlock_account
+    unlock_account,
+    forgot_password,
+    register
 }
 
 export function login(data) {
@@ -18,4 +20,12 @@ export function verify(data) {
 
 export function unlock_account(usernameOrEmail) {
     return axios.post(`${URL}/unlock-account/${usernameOrEmail}`);
+}
+
+export function forgot_password(usernameOrEmail) {
+    return axios.post(`${URL}/forgot-password/${usernameOrEmail}`);
+}
+
+export function register(data) {
+    return axios.post(`${URL}/sign-up`, data);
 }

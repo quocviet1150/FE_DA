@@ -61,5 +61,8 @@
   "verify_success": "Verify success",
   "email_already_exists": "Email already exists",
   "username_already_exists": "Username already exists",
-  "register_success": "Please check your email to confirm your account"
+  "register_success": "Please check your email to confirm your account",
+  "my_acc": "My account",
+  "my_pur": "My purchase",
+  "logout": "Logout"
 }

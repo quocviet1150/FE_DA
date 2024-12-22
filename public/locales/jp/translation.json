@@ -61,5 +61,8 @@
   "check_mail": "新しいパスワード情報を確認してください",
   "email_already_exists": "メールアドレスはすでに存在します",
   "username_already_exists": "ユーザー名はすでに存在します",
-  "register_success": "アカウントを確認するためにメールを確認してください"
+  "register_success": "アカウントを確認するためにメールを確認してください",
+  "my_acc": "私のアカウント",
+  "my_pur": "私の注文",
+  "logout": "ログアウト"
 }

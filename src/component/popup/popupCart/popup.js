@@ -1,5 +1,5 @@
 import React from "react";
-import "./popup.css";
+import "../../popup/popup.css";
 import { useTranslation } from "react-i18next";
 
 const Popup = () => {

@@ -6,11 +6,13 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import LanguageSelector from '../multilingual/LanguageSelector';
 import './header.css';
-import Popup from '../popup/popup';
+import Popup from '../popup/popupCart/popup';
 import { useLoading } from '../loading/LoadingProvider';
+import PopupAccount from '../popup/popupAccount/popupAcc';
 
 const Header = ({ onSearch }) => {
     const [showPopup, setShowPopup] = useState(false);
+    const [showPopupAcc, setShowPopupAcc] = useState(false);
     const { showLoading, hideLoading } = useLoading();
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -18,7 +20,7 @@ const Header = ({ onSearch }) => {
     const token = user.token;
     const [searchText, setSearchText] = useState("");
     console.log(user);
-    
+
 
     const handleInputChange = (e) => {
         setSearchText(e.target.value);
@@ -77,9 +79,12 @@ const Header = ({ onSearch }) => {
                     <div className="d-flex w-50 justify-content-end">
                         <LanguageSelector />
                         {token ? (
-                            <div className="d-flex gap-2" style={{ marginLeft: "20px" }}>
+                            <div className="d-flex gap-2" style={{ marginLeft: "20px" }}
+                                onMouseEnter={() => setShowPopupAcc(true)}
+                                onMouseLeave={() => setShowPopupAcc(false)}>
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                                     className="img-login" alt="ups" />  {user.username}
+                                {showPopupAcc && <PopupAccount />}
                             </div>
                         ) : (
                             <div className="d-flex mr-2">
@@ -118,10 +123,10 @@ const Header = ({ onSearch }) => {
                         </div>
                     </div>
 
-                    <div style={{ width: "10%" }} className="d-flex align-items-center justify-content-center">
-                        <FontAwesomeIcon icon={faCartShopping} style={{ height: "30px" }} onClick={handelNavigateCart}
-                            onMouseEnter={() => setShowPopup(true)}
-                            onMouseLeave={() => setShowPopup(false)} />
+                    <div style={{ width: "10%" }} className="d-flex align-items-center justify-content-center"
+                        onMouseEnter={() => setShowPopup(true)}
+                        onMouseLeave={() => setShowPopup(false)} >
+                        <FontAwesomeIcon icon={faCartShopping} style={{ height: "30px" }} onClick={handelNavigateCart} />
                         {showPopup && <Popup />}
                     </div>
                 </div>

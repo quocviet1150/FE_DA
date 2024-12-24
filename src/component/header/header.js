@@ -17,10 +17,8 @@ const Header = ({ onSearch }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem('user'));
-    const token = user.token;
+    const token = user?.token || "";
     const [searchText, setSearchText] = useState("");
-    console.log(user);
-
 
     const handleInputChange = (e) => {
         setSearchText(e.target.value);
@@ -83,7 +81,7 @@ const Header = ({ onSearch }) => {
                                 onMouseEnter={() => setShowPopupAcc(true)}
                                 onMouseLeave={() => setShowPopupAcc(false)}>
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                                    className="img-login" alt="ups" />  {user.username}
+                                    className="img-login" alt="ups" />  {user?.username}
                                 {showPopupAcc && <PopupAccount />}
                             </div>
                         ) : (

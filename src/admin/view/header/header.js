@@ -16,7 +16,8 @@ const Header = ({ menuCollapse, setMenuCollapse }) => {
     { path: ROUTES.DASHBOARD, label: t("dashboard"), icon: <FiHome /> },
     { path: ROUTES.PRODUCT_TYPE, label: t("product_type"), icon: <FiPackage /> },
     { path: ROUTES.PRODUCT, label: t("product"), icon: <FiPackage /> },
-    { path: ROUTES.BRAND, label: "Brands", icon: <FaList /> }
+    { path: ROUTES.BRAND, label: "Brands", icon: <FaList /> },
+    { path: ROUTES.CATEGORY, label: "Categories", icon: <FaList /> }
   ]);
 
   const location = useLocation();

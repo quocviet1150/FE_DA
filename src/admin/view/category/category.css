@@ -1,0 +1,13 @@
+.form-control {
+    padding: 6px !important;
+}
+
+.icon-category {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+}

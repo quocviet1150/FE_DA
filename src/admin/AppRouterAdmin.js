@@ -6,6 +6,7 @@ import Login from "./view/login/login";
 import Brands from "./view/brand/brand";
 import ProductTypes from "./view/productType/productType";
 import Products from "./view/product/product";
+import Categories from "./view/category/category";
 
 const AppRouterAdmin = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouterAdmin = () => {
       <Route path="brand" element={<Brands />} />
       <Route path="product-type" element={<ProductTypes />} />
       <Route path="product" element={<Products />} />
+      <Route path="category" element={<Categories />} />
     </Routes>
   );
 };

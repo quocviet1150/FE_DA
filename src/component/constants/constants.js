@@ -3,5 +3,6 @@ export const ROUTES = {
     PRODUCT_TYPE: "/admin/product-type",
     PRODUCT: "/admin/product",
     BRAND: "/admin/brand",
+    CATEGORY: "/admin/category",
   };
   

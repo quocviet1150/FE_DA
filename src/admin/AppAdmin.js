@@ -8,10 +8,12 @@ import Login from "./view/login/login";
 const AppAdmin = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuCollapse, setMenuCollapse] = useState(false);
-
+    
     useEffect(() => {
-        const token = "test";
+        const user = JSON.parse(localStorage.getItem('userAdmin'));
+        const token = user?.token || "";
         if (token) {
+            localStorage.setItem('tokenAdmin', JSON.stringify(user?.token));
             setIsLoggedIn(true);
         }
     }, []);

@@ -1,37 +1,15 @@
 import { CButton, CFormInput, CFormSelect, CPagination, CPaginationItem, CTable, CTableBody, CTableDataCell, CTableHead, CTableHeaderCell, CTableRow } from "@coreui/react";
-import { useState } from "react";
-import './category.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faRemove } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import { CategoryApi } from "../../../api/category/categoryApi";
+import { useLoading } from "../../../component/loading/LoadingProvider";
+import './category.css';
 
 const Categories = () => {
-    const data = [
-        { name: "Mark Otto", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "motto", createdDate: "2023-01-01", updatedDate: "2023-01-05" },
-        { name: "Jacob Thornton", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jthornton", createdDate: "2023-02-01", updatedDate: "2023-02-05" },
-        { name: "Larry Bird", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "lbird", createdDate: "2023-03-01", updatedDate: "2023-03-05" },
-        { name: "John Doe", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jdoe", createdDate: "2023-04-01", updatedDate: "2023-04-05" },
-        { name: "Jane Smith", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jsmith", createdDate: "2023-05-01", updatedDate: "2023-05-05" },
-        { name: "Mark Otto", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "motto", createdDate: "2023-01-01", updatedDate: "2023-01-05" },
-        { name: "Jacob Thornton", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jthornton", createdDate: "2023-02-01", updatedDate: "2023-02-05" },
-        { name: "Larry Bird", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "lbird", createdDate: "2023-03-01", updatedDate: "2023-03-05" },
-        { name: "John Doe", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jdoe", createdDate: "2023-04-01", updatedDate: "2023-04-05" },
-        { name: "Jane Smith", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jsmith", createdDate: "2023-05-01", updatedDate: "2023-05-05" },
-        { name: "Mark Otto", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "motto", createdDate: "2023-01-01", updatedDate: "2023-01-05" },
-        { name: "Jacob Thornton", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jthornton", createdDate: "2023-02-01", updatedDate: "2023-02-05" },
-        { name: "Larry Bird", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "lbird", createdDate: "2023-03-01", updatedDate: "2023-03-05" },
-        { name: "John Doe", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jdoe", createdDate: "2023-04-01", updatedDate: "2023-04-05" },
-        { name: "Jane Smith", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jsmith", createdDate: "2023-05-01", updatedDate: "2023-05-05" },
-        { name: "Mark Otto", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "motto", createdDate: "2023-01-01", updatedDate: "2023-01-05" },
-        { name: "Jacob Thornton", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jthornton", createdDate: "2023-02-01", updatedDate: "2023-02-05" },
-        { name: "Larry Bird", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "lbird", createdDate: "2023-03-01", updatedDate: "2023-03-05" },
-        { name: "John Doe", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jdoe", createdDate: "2023-04-01", updatedDate: "2023-04-05" },
-        { name: "Jane Smith", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jsmith", createdDate: "2023-05-01", updatedDate: "2023-05-05" },
-        { name: "Mark Otto", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "motto", createdDate: "2023-01-01", updatedDate: "2023-01-05" },
-        { name: "Jacob Thornton", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jthornton", createdDate: "2023-02-01", updatedDate: "2023-02-05" },
-        { name: "Larry Bird", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "lbird", createdDate: "2023-03-01", updatedDate: "2023-03-05" },
-        { name: "John Doe", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jdoe", createdDate: "2023-04-01", updatedDate: "2023-04-05" },
-        { name: "Jane Smith", image: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp", productType: "jsmith", createdDate: "2023-05-01", updatedDate: "2023-05-05" },
-    ];
+    const { showLoading, hideLoading } = useLoading();
+    const token = JSON.parse(localStorage.getItem('tokenAdmin')) || "";
+    const [data, setData] = useState([]);
     const itemsPerPage = 14;
     const [formData, setFormData] = useState({
         name: '',
@@ -40,6 +18,10 @@ const Categories = () => {
         size: itemsPerPage,
         page: 1,
     });
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -52,11 +34,6 @@ const Categories = () => {
 
     const totalPages = Math.ceil(data.length / itemsPerPage);
 
-    const currentData = data.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-    );
-
     const handlePageClick = (page) => {
         setCurrentPage(page);
         setFormData((prevState) => ({
@@ -68,6 +45,24 @@ const Categories = () => {
     const handleSubmit = () => {
         console.log(formData);
     };
+
+    const fetchData = () => {
+        try {
+            showLoading();
+            const params = formData;
+            CategoryApi.getAllCategory(token, params)
+                .then((response) => {
+                    setData(response.data);
+                    hideLoading();
+                })
+                .catch((error) => {
+                    hideLoading();
+                    console.log(error);
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div>
@@ -136,24 +131,24 @@ const Categories = () => {
                         </CTableRow>
                     </CTableHead>
                     <CTableBody>
-                        {currentData.map((row, index) => (
+                        {data?.map((row, index) => (
                             <CTableRow key={index} active={index % 2 === 0}>
                                 <CTableHeaderCell scope="row">{index + 1 + (currentPage - 1) * 10}</CTableHeaderCell>
                                 <CTableDataCell width={150}>
-                                    <img src={row.image ? row.image : "https://via.placeholder.com/150"} alt=""
+                                    <img src={row?.directoryPath ? row?.directoryPath : null} alt=""
                                         style={{ width: "25px", height: "25px", borderRadius: '50%' }} />
                                 </CTableDataCell>
-                                <CTableDataCell>{row.name}</CTableDataCell>
-                                <CTableDataCell>{row.productType}</CTableDataCell>
-                                <CTableDataCell>{row.createdDate}</CTableDataCell>
-                                <CTableDataCell>{row.updatedDate}</CTableDataCell>
+                                <CTableDataCell>{row?.name}</CTableDataCell>
+                                <CTableDataCell>{row?.productType?.name}</CTableDataCell>
+                                <CTableDataCell>{row?.createdDate}</CTableDataCell>
+                                <CTableDataCell>{row?.updatedDate}</CTableDataCell>
                                 <CTableDataCell width={200}>
                                     <div className="d-flex gap-2 justify-content-center">
                                         <div>
-                                            <FontAwesomeIcon icon={faEdit} color="blue" className="icon-category"/>
+                                            <FontAwesomeIcon icon={faEdit} color="blue" className="icon-category" />
                                         </div>
                                         <div>
-                                            <FontAwesomeIcon icon={faRemove} color="red" className="icon-category"/>
+                                            <FontAwesomeIcon icon={faRemove} color="red" className="icon-category" />
                                         </div>
                                     </div>
                                 </CTableDataCell>

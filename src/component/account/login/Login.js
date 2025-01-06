@@ -78,6 +78,7 @@ const Login = () => {
             AccountApi.login(data)
                 .then((response) => {
                     localStorage.setItem('user', JSON.stringify(response.data));
+                    localStorage.removeItem('userAdmin');
                     navigate('/');
                     hideLoading();
                 })

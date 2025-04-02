@@ -8,6 +8,7 @@ import Home from "../pages/user/home/home";
 import AppAdmin from "../admin/AppAdmin";
 import Page404 from "../error/page404";
 import Verify from "../component/account/verify/verify";
+import DirectoryDetails from "../pages/user/directory/detail/directoryDetail";
 
 const AppRouter = () => {
   return (
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path="login" element={<Login />} />
         <Route path="reset" element={<ForgotPassword />} />
         <Route path="register" element={<Register />} />
+        <Route path="directory/*" element={<DirectoryDetails />} />
         <Route path="" element={<Home />} />
         <Route path="*" element={<Page404 />} />
         <Route path="verify" element={<Verify />} />

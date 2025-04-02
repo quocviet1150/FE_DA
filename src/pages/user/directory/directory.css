@@ -1,69 +1,73 @@
 .directory-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .directory-row {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-  }
-  
-  .directory-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    height: 150px;
-  }
-  
-  .directory-item img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 8px;
-  }
-  
-  .directory-item p {
-    font-size: 14px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .directory-item.empty {
-    background-color: #f9f9f9;
-    border: none;
-    box-shadow: none;
-  }
-  
-  .pagination_d {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2px;
-    gap: 10px;
-  }
-  
-  .pagination_d button {
-    padding: 5px 10px;
-    font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.directory-row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.directory-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  height: 150px;
+
+  &:hover {
+    border: 1px solid #FF5722;
     cursor: pointer;
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    border-radius: 5px;
   }
-  
-  .pagination_d button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  .pagination_d span {
-    font-size: 14px;
-    color: #333;
-  }
-  
+}
+
+.directory-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.directory-item p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.directory-item.empty {
+  background-color: #f9f9f9;
+  border: none;
+  box-shadow: none;
+}
+
+.pagination_d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  gap: 10px;
+}
+
+.pagination_d button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.pagination_d button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination_d span {
+  font-size: 14px;
+  color: #333;
+}

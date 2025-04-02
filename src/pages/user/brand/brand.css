@@ -50,6 +50,11 @@
     text-align: center;
     padding: 5px;
     height: 200px;
+
+    &:hover {
+        border: 1px solid #FFFFFF;
+        cursor: pointer;
+    }
 }
 
 .product-img {

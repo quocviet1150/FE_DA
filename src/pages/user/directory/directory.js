@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './directory.css';
+import { useNavigate } from 'react-router-dom';
 
 const data = [
   { id: 1, name: 'Thời Trang Nam', img: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp' },
@@ -26,7 +27,7 @@ const ITEMS_PER_PAGE = 20;
 
 const Directorys = () => {
   const [currentPage, setCurrentPage] = useState(0);
-
+  const navigate = useNavigate();
   const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
 
   const handleNext = () => {
@@ -47,11 +48,15 @@ const Directorys = () => {
   const firstRow = currentData.slice(0, 10);
   const secondRow = currentData.slice(10, 20);
 
+  const handleClick = (id, name) => {
+    navigate(`/directory/${name}`, { state: { id } });
+  };
+
   return (
     <div className="directory-container">
       <div className="directory-row">
         {firstRow.map((item) => (
-          <div key={item.id} className={`directory-item ${!item.name ? 'empty' : ''}`}>
+          <div key={item.id} className={`directory-item ${!item.name ? 'empty' : ''}`} onClick={() => handleClick(item.id, item.name)}>
             {item.img && <img src={item.img} alt={item.name} />}
             <p>{item.name}</p>
           </div>
@@ -59,7 +64,7 @@ const Directorys = () => {
       </div>
       <div className="directory-row">
         {secondRow.map((item) => (
-          <div key={item.id} className={`directory-item ${!item.name ? 'empty' : ''}`}>
+          <div key={item.id} className={`directory-item ${!item.name ? 'empty' : ''}`} onClick={() => handleClick(item.id, item.name)}>
             {item.img && <img src={item.img} alt={item.name} />}
             <p>{item.name}</p>
           </div>

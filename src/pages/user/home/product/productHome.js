@@ -55,7 +55,7 @@ const ProductHome = () => {
                         <div className="product-name">{product}</div>
                         <div style={{ height: '3vh' }}></div>
                         <div className="d-flex w-100" style={{ padding: '5%' }}>
-                            <div className="d-flex justify-content-start align-items-center" style={{ color: '#FF5722', width: '40%' }}>
+                            <div className="d-flex justify-content-start align-items-center" style={{ color: 'sandybrown', width: '40%' }}>
                                 <div style={{ fontSize: '10px' }}>₫</div>5.000
                             </div>
                             <div className="d-flex justify-content-end gap-1" style={{ width: '60%' }}>

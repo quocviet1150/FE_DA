@@ -21,7 +21,7 @@
   height: 150px;
 
   &:hover {
-    border: 1px solid #FF5722;
+    border: 1px solid sandybrown;
     cursor: pointer;
   }
 }

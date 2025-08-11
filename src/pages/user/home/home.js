@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import Header from "../../../component/header/header";
-import Carousels from "../carousel/carousel";
+import Carousels from "./carousel/carousel";
 import Directorys from "../directory/directory";
-import Brands from "../brand/brand";
+import Brands from "./brand/brand";
 import FooterAccount from "../../../component/footer/footer";
-import ProductHome from "../product/productHome";
+import ProductHome from "./product/productHome";
 
 const Home = () => {
     const { t } = useTranslation();

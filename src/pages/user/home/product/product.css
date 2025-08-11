@@ -11,14 +11,14 @@
 
     &:hover {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-        border: 1px solid #FF5722;
+        border: 1px solid sandybrown;
     }
 }
 
 .see-more-btn {
     margin-top: 20px;
     padding: 10px 12%;
-    background-color: #FF5722;
+    background-color: sandybrown;
     color: white;
     border: none;
     cursor: pointer;
@@ -36,7 +36,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #FF5722;
+    background-color: sandybrown;
     color: white;
     padding: 0px 5px;
     font-size: 14px;

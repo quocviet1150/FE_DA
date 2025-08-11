@@ -68,7 +68,7 @@ const Header = ({ onSearch }) => {
     };
 
     return (
-        <header style={{ background: 'linear-gradient(-180deg,#f53d2d,#f63)' }}>
+        <header style={{ background: 'sandybrown' }}>
             <div className="d-flex justify-content-center">
                 <div className="d-flex w-60 pt-2 pb-2">
                     <div className="d-flex w-50 align-items-center gap-2">
